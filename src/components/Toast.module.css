@@ -1,0 +1,52 @@
+.toast {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid;
+  background: var(--bg-card);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  min-width: 240px;
+  max-width: 380px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  animation: slide-in-right 0.25s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hide {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.success {
+  border-color: rgba(0, 255, 157, 0.4);
+  box-shadow: 0 0 20px rgba(0, 255, 157, 0.08);
+}
+.success .icon { color: var(--status-online); }
+
+.error {
+  border-color: rgba(255, 60, 90, 0.4);
+  box-shadow: 0 0 20px rgba(255, 60, 90, 0.08);
+}
+.error .icon { color: var(--danger); }
+
+.info {
+  border-color: rgba(0, 194, 255, 0.35);
+  box-shadow: 0 0 20px rgba(0, 194, 255, 0.06);
+}
+.info .icon { color: var(--accent); }
+
+.icon {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.message {
+  color: var(--text-secondary);
+  line-height: 1.4;
+}

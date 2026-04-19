@@ -1,0 +1,200 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  animation: fadeIn 0.35s ease both;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card:hover {
+  border-color: var(--border-bright);
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
+}
+
+.card:hover::before { opacity: 1; }
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotPulse {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.statusLabel {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.cardActions {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.iconBtn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.iconBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.iconBtnDanger:hover {
+  color: var(--danger) !important;
+  border-color: var(--danger) !important;
+}
+
+.usernameRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accountIcon {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.username {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  word-break: break-all;
+}
+
+.notes {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  border-left: 2px solid var(--border-bright);
+  padding-left: 0.5rem;
+}
+
+.games {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.gamesLabel {
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.gamesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.gameChip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(0,194,255,0.2);
+  padding: 0.15rem 0.5rem;
+}
+
+.errorMsg {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--danger);
+  background: var(--danger-dim);
+  border: 1px solid rgba(255,60,90,0.2);
+  padding: 0.4rem 0.6rem;
+  word-break: break-word;
+}
+
+.btnRow {
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+.btnStart, .btnStop {
+  width: 100%;
+  border: 1px solid;
+  padding: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btnStart {
+  background: var(--accent-2-dim);
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+
+.btnStart:hover:not(:disabled) {
+  background: rgba(0,255,157,0.2);
+  box-shadow: 0 0 12px rgba(0,255,157,0.3);
+}
+
+.btnStart:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--warning-dim);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.btnStop {
+  background: var(--danger-dim);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btnStop:hover {
+  background: rgba(255,60,90,0.25);
+  box-shadow: 0 0 12px rgba(255,60,90,0.3);
+}

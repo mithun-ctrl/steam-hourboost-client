@@ -1,0 +1,80 @@
+:root {
+  --bg-primary: #0a0c10;
+  --bg-secondary: #0f1318;
+  --bg-card: #131820;
+  --bg-card-hover: #171f2a;
+  --bg-input: #0d1117;
+  --border: #1e2a3a;
+  --border-bright: #2a3f58;
+  --accent: #00c2ff;
+  --accent-dim: rgba(0, 194, 255, 0.15);
+  --accent-glow: rgba(0, 194, 255, 0.4);
+  --accent-2: #00ff9d;
+  --accent-2-dim: rgba(0, 255, 157, 0.12);
+  --danger: #ff3c5a;
+  --danger-dim: rgba(255, 60, 90, 0.15);
+  --warning: #ffaa00;
+  --warning-dim: rgba(255, 170, 0, 0.15);
+  --text-primary: #e2eaf5;
+  --text-secondary: #6b8199;
+  --text-muted: #3d5066;
+  --status-online: #00ff9d;
+  --status-offline: #3d5066;
+  --status-connecting: #ffaa00;
+  --status-error: #ff3c5a;
+  --font-display: 'Orbitron', monospace;
+  --font-ui: 'Rajdhani', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scanline overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+a { color: var(--accent); text-decoration: none; }
+button { cursor: pointer; font-family: var(--font-ui); }
+input, textarea, select { font-family: var(--font-ui); }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px var(--accent-glow); }
+  50% { box-shadow: 0 0 14px var(--accent-glow), 0 0 28px rgba(0,194,255,0.15); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
