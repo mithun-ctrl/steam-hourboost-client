@@ -1,0 +1,486 @@
+.page {
+  max-width: 900px;
+  animation: fadeSlideUp 0.25s ease both;
+}
+
+/* === Back link === */
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: color var(--transition);
+}
+.backLink:hover { color: var(--text-primary); }
+
+/* === Hero === */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.heroAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-grad);
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-heading);
+  flex-shrink: 0;
+}
+
+.heroMeta {
+  flex: 1;
+}
+
+.heroName {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.heroBadgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.heroStats {
+  display: flex;
+  gap: 24px;
+}
+
+.heroStat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.heroStatVal {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.heroStatLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* === Tab Bar === */
+.tabBar {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 5px;
+  width: fit-content;
+}
+
+.tab {
+  padding: 7px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.tab:hover { color: var(--text-primary); background: rgba(255,255,255,0.04); }
+
+.tabActive {
+  background: rgba(56,189,248,0.12) !important;
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
+/* === Tab Content === */
+.tabContent {
+  animation: fadeSlideUp 0.2s ease both;
+}
+
+.cardsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* === Card === */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cardBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+/* === Idle Control === */
+.idleControl {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.idleButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.btnStart {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  background: var(--success-dim);
+  border: 1px solid rgba(16,185,129,0.3);
+  border-radius: var(--radius-md);
+  color: var(--success);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.btnStart:hover { background: rgba(16,185,129,0.2); }
+.btnStart:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btnStop {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  background: var(--danger-dim);
+  border: 1px solid rgba(244,63,94,0.3);
+  border-radius: var(--radius-md);
+  color: var(--danger);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.btnStop:hover { background: rgba(244,63,94,0.2); }
+
+.btnConfig {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.btnConfig:hover { background: rgba(255,255,255,0.08); color: var(--text-primary); }
+
+.errorMsg {
+  font-size: 0.775rem;
+  color: var(--danger);
+  background: var(--danger-dim);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border-left: 2px solid var(--danger);
+}
+
+.guardNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(56,189,248,0.06);
+  border: 1px solid rgba(56,189,248,0.15);
+  border-radius: var(--radius-md);
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.guardNote > svg {
+  flex-shrink: 0;
+  color: var(--accent);
+  margin-top: 1px;
+}
+
+.guardNote strong {
+  color: var(--text-primary);
+}
+
+/* === Steam Links === */
+.steamLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 11px 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.825rem;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.steamLink:hover {
+  background: rgba(56,189,248,0.06);
+  border-color: rgba(56,189,248,0.2);
+  color: var(--accent);
+}
+.steamLink svg { flex-shrink: 0; }
+
+/* === Games === */
+.gamesNote {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius-md);
+  border-left: 2px solid var(--border-bright);
+}
+
+.btnAdd {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(56,189,248,0.3);
+  border-radius: var(--radius-md);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition);
+  align-self: flex-start;
+}
+.btnAdd:hover { background: rgba(56,189,248,0.18); }
+.btnAdd:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.gamesEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 32px;
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.gamesList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: background var(--transition);
+}
+.gameRow:hover { background: rgba(255,255,255,0.05); }
+
+.gameInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gameAppId {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.gameStoreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.gameStoreLink:hover { color: var(--accent); }
+
+.iconBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.iconBtnDanger:hover {
+  background: var(--danger-dim);
+  border-color: rgba(244,63,94,0.3);
+  color: var(--danger);
+}
+
+/* === Settings Tab === */
+.input {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 9px 14px;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.input:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.08);
+}
+.input::placeholder { color: var(--text-muted); }
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+  width: 100%;
+}
+
+.settingsActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnSave {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  background: var(--accent-grad);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+.btnSave:hover { opacity: 0.9; }
+.btnSave:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.dangerZone {
+  border-color: rgba(244,63,94,0.2) !important;
+  background: rgba(244,63,94,0.04) !important;
+}
+
+.cardTitleDanger {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--danger);
+}
+
+.dangerText {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.btnDelete {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  background: var(--danger-dim);
+  border: 1px solid rgba(244,63,94,0.3);
+  border-radius: var(--radius-md);
+  color: var(--danger);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.btnDelete:hover { background: rgba(244,63,94,0.2); }
+
+/* === Not Found === */
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 80px;
+  color: var(--text-muted);
+}
+
+/* === Responsive === */
+@media (max-width: 700px) {
+  .cardsRow { grid-template-columns: 1fr; }
+  .hero { flex-wrap: wrap; }
+}
