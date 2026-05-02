@@ -19,8 +19,8 @@ const IconCheck = () => (
 );
 
 const PLAN_FEATURES = {
-  free: ['3 Steam account', 'Up to 32 games per account', 'Basic session control', 'VAC Safety'],
-  pro: ['10 accounts', 'Up to 32 games per account', 'Priority session control', 'Advanced scheduling', 'Email alerts', 'VAC Safety'],
+  free: ['1 Steam account', 'Up to 32 games per account', 'Basic session control', 'VAC Safety'],
+  pro: ['5 accounts', 'Up to 32 games per account', 'Priority session control', 'Advanced scheduling', 'Email alerts', 'VAC Safety'],
   ultimate: ['Unlimited accounts', 'Up to 32 games per account', 'Priority session control', 'Advanced scheduling', 'Email alerts','VAC Safety', 'API access'],
 };
 
